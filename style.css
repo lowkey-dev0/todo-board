@@ -1,0 +1,78 @@
+/* Basic page styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main board container */
+.board {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Row containing input + button */
+.inputRow {
+  display: flex;
+  gap: 10px;
+}
+
+/* Text input styling */
+#newTask {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add button styling */
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #0078ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Task list styling */
+ul {
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Individual task item */
+li {
+  list-style: none;
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for completed tasks */
+li.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete button inside each task */
+.delete {
+  background: #ff3b3b;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
