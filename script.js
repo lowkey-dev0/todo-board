@@ -2,6 +2,15 @@
 const input = document.getElementById("newTask");
 const list = document.getElementById("taskList");
 const addBtn = document.getElementById("addBtn");
+const categorySelect = document.getElementById("categorySelect");
+
+// Color map for categories
+const categoryColors = {
+  General: "#0078ff",
+  Work: "#ff9800",
+  Home: "#4caf50",
+  Shopping: "#e91e63",
+};
 
 // Load tasks from localStorage (or empty array if none exist)
 let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
@@ -15,11 +24,16 @@ input.addEventListener("keypress", (e) => {
   if (e.key === "Enter") addTask();
 });
 
-// Add a new task to the list
+// Add a new task with category
 function addTask() {
-  if (!input.value.trim()) return; // Ignore empty input
+  if (!input.value.trim()) return;
 
-  tasks.push({ text: input.value, done: false });
+  tasks.push({
+    text: input.value,
+    done: false,
+    category: categorySelect.value,
+  });
+
   input.value = "";
   save();
   render();
@@ -52,11 +66,14 @@ function render() {
     const li = document.createElement("li");
     li.className = t.done ? "done" : "";
 
-    // Create task item with toggle + delete
+    // Create task item with toggle + delete buttons and category tag with color
     li.innerHTML = `
-            <span onclick="toggle(${i})">${t.text}</span>
-            <span class="delete" onclick="removeTask(${i})">X</span>
-        `;
+    <span onclick="toggle(${i})">${t.text}</span>
+    <span class="tag" style="background:${categoryColors[t.category]}">
+        ${t.category}
+    </span>
+    <span class="delete" onclick="removeTask(${i})">X</span>
+  `;
 
     list.appendChild(li);
   });

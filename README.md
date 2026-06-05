@@ -1,6 +1,6 @@
 # To‑Do Board
 
-A simple To-Do board built with **HTML**, **CSS**, and **JavaScript**.
+A simple To-Do board built with **HTML**, **CSS**, and **JavaScript**. enhanced with **categories** and **color‑coded category badges**
 
 ## Features
 
@@ -8,23 +8,20 @@ A simple To-Do board built with **HTML**, **CSS**, and **JavaScript**.
 - Mark tasks as completed
 - Delete tasks
 - Automatic saving via LocalStorage
+- Category selection for each task
+- Color‑coded category badges
 
-## Project Structure
+## Category Colors
 
-```
-/todo-board
-├── index.html
-├── style.css
-└── script.js
-```
+Each category has its own color badge:
 
-## Installation & Usage
-
-1. Clone or download the repository
-2. Open the project folder
-3. Open **index.html** in your browser
+- **General** → Blue
+- **Work** → Orange
+- **Home** → Green
+- **Shopping** → Pink
 
 ## Extensions in Future
 
 - Modern UI redesign
 - Edit function
+- Category filters
